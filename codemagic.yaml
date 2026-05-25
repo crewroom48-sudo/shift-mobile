@@ -1,0 +1,13 @@
+workflows:
+  expo-android:
+    name: Expo Android Build
+
+    environment:
+      node: latest
+
+    scripts:
+      - yarn install
+      - npx expo export
+
+    artifacts:
+      - dist/**
