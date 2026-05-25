@@ -1,13 +1,13 @@
 workflows:
-  expo-android:
-    name: Expo Android Build
-
+  android-apk:
+    name: Android APK Build
+    max_build_duration: 60
     environment:
-      node: latest
+      flutter: stable
 
     scripts:
-      - npm install
-      - npx expo export
+      - flutter pub get
+      - flutter build apk --release
 
     artifacts:
-      - dist/**
+      - build/app/outputs/flutter-apk/app-release.apk
